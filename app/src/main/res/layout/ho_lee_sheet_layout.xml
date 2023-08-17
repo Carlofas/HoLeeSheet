@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ho_lee_sheet_coordinator_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ho_lee_sheet_behaivor_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/content_layout_title_ho_lee_sheet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/container_content_ho_lee_sheet">
+
+            <View
+                android:id="@+id/view_icon_ho_lee_sheet"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_icon_ho_lee_sheet" />
+
+            <ImageView
+                android:id="@+id/img_icon_ho_lee_sheet"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:elevation="10dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_info_ho_lee_sheet"
+                app:tint="@color/ho_lee_sheet_primary_color" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view_icon_ho_lee_sheet"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_content_ho_lee_sheet">
+
+                <TextView
+                    android:id="@+id/tv_titulo_ho_lee_sheet"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/divider"
+                    tools:text="¡Atención!" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#C6C6C6"
+                    android:layout_below="@id/tv_titulo_ho_lee_sheet"
+                    app:layout_constraintTop_toBottomOf="@id/tv_titulo_ho_lee_sheet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp"/>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/dx_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintStart_toStartOf="@id/divider"
+                    app:layout_constraintEnd_toEndOf="@id/divider"
+                    android:progressTint="@color/ho_lee_sheet_primary_color"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_content_ho_lee_sheet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/content_layout_title_ho_lee_sheet"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/container_buttons_ho_lee_sheet">
+
+            <TextView
+                android:id="@+id/txt_message_ho_lee_sheet"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/view_stub"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Texto de prueba del dialogo" />
+
+            <ViewStub
+                android:id="@+id/view_stub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inflatedId="@+id/view_stub_inflated"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_message_ho_lee_sheet"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_buttons_ho_lee_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingVertical="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_content_ho_lee_sheet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancelar_ho_lee_sheet"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="7dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_aceptar_ho_lee_sheet"
+                tools:enabled="false"
+                android:text="Cancelar"
+                android:textColor="@color/btn_text_sheet_selector"
+                app:backgroundTint="@color/btn_negative_sheet_selector"
+                app:strokeColor="@color/btn_text_sheet_selector" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_aceptar_ho_lee_sheet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="14dp"
+                android:text="Aceptar"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/btn_positive_sheet_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_cancelar_ho_lee_sheet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_cancelar_ho_lee_sheet"
+                app:layout_constraintTop_toTopOf="@+id/btn_cancelar_ho_lee_sheet"
+                tools:enabled="false" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
